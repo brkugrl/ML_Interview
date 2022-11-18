@@ -76,3 +76,19 @@ plt.show()
 
 print('Sampled average family size:', totalSampleSize/numberOfSamples)
 print('Real average family size:', population.getPopulationSize()/numberOfFamilies)
+
+
+hist = []
+for j in range(100):
+  totalSampleSize = 0
+  for _ in range(numberOfSamples):
+    sampleFamilyID = (population.getRandomPerson()).getFamilyID()
+    sampleFamilySize = len(families[sampleFamilyID])
+    totalSampleSize += sampleFamilySize
+  hist.append(totalSampleSize/numberOfSamples)
+
+plt.hist(hist, bins=9)
+plt.title('Histogram of x_mean')
+plt.ylabel('average family size')
+plt.xlabel('number of samples')
+plt.show()
