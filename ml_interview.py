@@ -89,6 +89,6 @@ for j in range(100):
 
 plt.hist(hist, bins=9)
 plt.title('Histogram of x_mean')
-plt.ylabel('average family size')
-plt.xlabel('number of samples')
+plt.ylabel('number of samples')
+plt.xlabel('average family size')
 plt.show()
